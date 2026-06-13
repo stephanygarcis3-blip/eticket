@@ -130,8 +130,8 @@
             cursor: pointer;
         }
 
-        .view-section { display: none; flex: 1; }
-        .view-section.active { display: flex; flex-direction: column; }
+        .view-section { display: none; }
+        .view-section.active { display: block; }
 
         /* Login con Banner */
         .login-banner-img {
@@ -288,6 +288,7 @@
             </div>
         </header>
 
+        <!-- PANTALLA 1: LOGIN -->
         <div id="view-login" class="view-section active">
             <img class="login-banner-img" src="logo_eticket.jpeg" alt="eticket Banner">
             <div class="login-container">
@@ -305,6 +306,7 @@
             </div>
         </div>
 
+        <!-- PANTALLA 2: MIS EVENTOS -->
         <div id="view-tickets-list" class="view-section">
             <div class="sub-header-title">Mis Eventos</div>
             <div class="event-banner-container">
@@ -319,6 +321,7 @@
             <div class="grid-title">Tus boletos:</div>
             
             <div class="tickets-grid">
+                <!-- BOLETO 1 -->
                 <div class="ticket-card">
                     <div class="ticket-zone">PLATA D2</div>
                     <div class="ticket-seat">Fila AS - Butaca 42</div>
@@ -329,6 +332,7 @@
                     </button>
                 </div>
                 
+                <!-- BOLETO 2 -->
                 <div class="ticket-card">
                     <div class="ticket-zone">PLATA D2</div>
                     <div class="ticket-seat">Fila AS - Butaca 43</div>
@@ -341,6 +345,7 @@
             </div>
         </div>
 
+        <!-- PANTALLA 3: DETALLE CON QR -->
         <div id="view-ticket-detail" class="view-section">
             <div class="ticket-detail-container">
                 <div class="back-nav" onclick="changeView('view-tickets-list')">← Volver a mis entradas</div>
@@ -361,6 +366,7 @@
                             <div class="time-text">El código se actualiza automáticamente cada <span style="font-weight: bold; color: var(--eticket-light-blue);">15s</span></div>
                         </div>
 
+                        <!-- Wallet -->
                         <div class="wallet-container">
                             <a id="wallet-redirect-link" href="#" target="_blank">
                                 <img class="wallet-btn" 
@@ -428,5 +434,4 @@
             const emailInput = document.getElementById("input-email").value;
             if(emailInput) {
                 detectedUsername = emailInput.split('@')[0];
-            }
-        
+    
